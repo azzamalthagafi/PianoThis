@@ -21,6 +21,10 @@ Light Grey #EAEAEA */
   color:  #231F20;
 }
 
+p {
+	text-align: center;
+}
+
 .welcome, .piano{
 	text-align: center;
 }
@@ -33,6 +37,7 @@ Light Grey #EAEAEA */
 	margin: 0 -6px;
 	border: 1px solid;
 }
+
 
 .b-key {
 	display: inline-block;
@@ -51,4 +56,14 @@ Light Grey #EAEAEA */
 .b-key:hover {
 	background-color: #464646;
 }
+
+.b-key.active {
+	background-color: red;
+}
+
+.w-key.active {
+	background-color: red;
+}
+
+
 

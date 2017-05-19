@@ -1,7 +1,12 @@
 /**
 
-  This file was adapted from Michael Morris-Pearce's piano.js to include
-  the notes (c#5 - b5), include #-notation, and accomodate div class names for keys
+  This file was adapted from Michael Morris-Pearce's piano.js 
+
+  changes:
+  - Updated JQuery selectors for keys to reflect naming convention used in html
+  - Added notes CS5 - B5
+  - Added .active class toggling to make css code easily changable 
+  - 
 
 */
 
@@ -10,13 +15,13 @@
   /* Piano keyboard pitches. Names match sound files by ID attribute. */
   
   var keys =[
-    'a2', 'a#2', 'b2', 'c3', 'c#3', 'd3', 'd#3', 'e3', 'f3', 'f#3', 'g3', 'g#3',
-    'a3', 'a#3', 'b3', 'c4', 'c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4', 'g4', 'g#4',
-    'a4', 'a#4', 'b4', 'c5'
+    'a2', 'aS2', 'b2', 'c3', 'cS3', 'd3', 'dS3', 'e3', 'f3', 'fS3', 'g3', 'gS3',
+    'a3', 'aS3', 'b3', 'c4', 'cS4', 'd4', 'dS4', 'e4', 'f4', 'fS4', 'g4', 'gS4',
+    'a4', 'aS4', 'b4', 'c5', 'cS5', 'd5', 'dS5', 'e5', 'f5', 'fS5', 'g5', 'gS5',
+    'a5', 'aS5', 'b5'
   ];
   
   var pedal = 32; /* Keycode for sustain pedal. */
-  var tonic = 'a2'; /* Lowest pitch. */
   
   /* Piano state. */
   
@@ -24,9 +29,8 @@
   var depressed = {};
   
   /* Selectors */
-  
   function pianoClass(name) {
-    return '.piano-' + name;
+    return '#' + name;
   };
   
   function soundId(id) {
@@ -39,19 +43,6 @@
   };
 
   /* Virtual piano keyboard events. */
-  
-  function keyup(code) {
-    var offset = codes.indexOf(code);
-    var k;
-    if (offset >= 0) {
-      k = keys.indexOf(tonic) + offset;
-      return keys[k];
-    }
-  };
-  
-  function keydown(code) {
-    return keyup(code);
-  };
   
   function press(key) {
     var audio = sound(key);
@@ -68,9 +59,6 @@
         depressed[key] = true;
       }
     }
-    $(pianoClass(key)).animate({
-      'backgroundColor': '#88FFAA'
-    }, 0);
   };
 
   /* Manually diminish the volume when the key is not sustained. */
@@ -106,21 +94,8 @@
       if (audio) {
         audio.pause();
       }
-      if (key.length > 2) {
-        $(pianoClass(key)).animate({
-          'backgroundColor': 'black'
-        }, 300, 'easeOutExpo');
-      } else {
-        $(pianoClass(key)).animate({
-          'backgroundColor': 'white'
-        }, 300, 'easeOutExpo');
-      }
     };
   };
-
-  /* Simulate a gentle release, as opposed to hard stop. */
-  
-  var fadeout = true;
 
   /* Sustain pedal, toggled by user. */
   
@@ -130,26 +105,14 @@
   
   keys.forEach(function(key) {
     $(pianoClass(key)).mousedown(function() {
-      $(pianoClass(key)).animate({
-        'backgroundColor': '#88FFAA'
-      }, 0);
+      $(pianoClass(key)).toggleClass('active');
       press(key);
     });
-    if (fadeout) {
-      $(pianoClass(key)).mouseup(function() {
-        depressed[key] = false;
-        if (!sustaining) {
-          fade(key)();
-        }
-      });
-    } else {
-      $(pianoClass(key)).mouseup(function() {
-        depressed[key] = false;
-        if (!sustaining) {
-          kill(key)();
-        }
-      });
-    }
+
+    $(pianoClass(key)).mouseup(function() {
+      depressed[key] = false;
+      fade(key)();
+    });
   });
 
 })();

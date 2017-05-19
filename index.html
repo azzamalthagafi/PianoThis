@@ -5,60 +5,102 @@
   <head>
 	 <title>Piano This!</title>
    <link href="style.css" type="text/css" rel="stylesheet"/>
-  </head>
+    <script src="vendor/jquery-1.7.2.min.js"></script>
+    <script src="vendor/jquery-ui-1.8.20.custom.min.js"></script>  </head>
 
   <body>
     <div class="welcome">
       <h1> Welcome to Piano This!</h1>
     </div>
+    <div class="audio-files">
+      <audio id="sound-a2" src="samples/A2.ogg" preload="auto"></audio>
+      <audio id="sound-aS2" src="samples/Bb2.ogg" preload="auto"></audio>
+      <audio id="sound-b2" src="samples/B2.ogg" preload="auto"></audio>
+      <audio id="sound-c3" src="samples/C3.ogg" preload="auto"></audio>
+      <audio id="sound-cS3" src="samples/Db3.ogg" preload="auto"></audio>
+      <audio id="sound-d3" src="samples/D3.ogg" preload="auto"></audio>
+      <audio id="sound-dS3" src="samples/Eb3.ogg" preload="auto"></audio>
+      <audio id="sound-e3" src="samples/E3.ogg" preload="auto"></audio>
+      <audio id="sound-f3" src="samples/F3.ogg" preload="auto"></audio>
+      <audio id="sound-fS3" src="samples/Gb3.ogg" preload="auto"></audio>
+      <audio id="sound-g3" src="samples/G3.ogg" preload="auto"></audio>
+      <audio id="sound-gS3" src="samples/Ab3.ogg" preload="auto"></audio>
+      <audio id="sound-a3" src="samples/A3.ogg" preload="auto"></audio>
+      <audio id="sound-aS3" src="samples/Bb3.ogg" preload="auto"></audio>
+      <audio id="sound-b3" src="samples/B3.ogg" preload="auto"></audio>
+      <audio id="sound-c4" src="samples/C4.ogg" preload="auto"></audio>
+      <audio id="sound-cS4" src="samples/Db4.ogg" preload="auto"></audio>
+      <audio id="sound-d4" src="samples/D4.ogg" preload="auto"></audio>
+      <audio id="sound-dS4" src="samples/Eb4.ogg" preload="auto"></audio>
+      <audio id="sound-e4" src="samples/E4.ogg" preload="auto"></audio>
+      <audio id="sound-f4" src="samples/F4.ogg" preload="auto"></audio>
+      <audio id="sound-fS4" src="samples/Gb4.ogg" preload="auto"></audio>
+      <audio id="sound-g4" src="samples/G4.ogg" preload="auto"></audio>
+      <audio id="sound-gS4" src="samples/Ab4.ogg" preload="auto"></audio>
+      <audio id="sound-a4" src="samples/A4.ogg" preload="auto"></audio>
+      <audio id="sound-aS4" src="samples/Bb4.ogg" preload="auto"></audio>
+      <audio id="sound-b4" src="samples/B4.ogg" preload="auto"></audio>
+      <audio id="sound-c5" src="samples/C5.ogg" preload="auto"></audio>
+      <audio id="sound-cS5" src="samples/Db5.ogg" preload="auto"></audio>
+      <audio id="sound-d5" src="samples/D5.ogg" preload="auto"></audio>
+      <audio id="sound-dS5" src="samples/Eb5.ogg" preload="auto"></audio>
+      <audio id="sound-e5" src="samples/E5.ogg" preload="auto"></audio>
+      <audio id="sound-f5" src="samples/F5.ogg" preload="auto"></audio>
+      <audio id="sound-fS5" src="samples/Gb5.ogg" preload="auto"></audio>
+      <audio id="sound-g5" src="samples/G5.ogg" preload="auto"></audio>
+      <audio id="sound-gS5" src="samples/Ab5.ogg" preload="auto"></audio>
+      <audio id="sound-a5" src="samples/A5.ogg" preload="auto"></audio>
+      <audio id="sound-aS5" src="samples/Bb5.ogg" preload="auto"></audio>
+      <audio id="sound-b5" src="samples/B5.ogg" preload="auto"></audio>
+    </div>
 
     <div class="piano">
       <div class="w-key" id="a2"></div>
-      <div class="b-key" id="a#2"></div>
+      <div class="b-key" id="aS2"></div>
       <div class="w-key" id="b2"></div>
       <div class="w-key" id="c3"></div>
-      <div class="b-key" id="c#3"></div>
+      <div class="b-key" id="cS3"></div>
       <div class="w-key" id="d3"></div>
-      <div class="b-key" id="d#3"></div>
+      <div class="b-key" id="dS3"></div>
       <div class="w-key" id="e3"></div>
       <div class="w-key" id="f3"></div>
-      <div class="b-key" id="f#3"></div>
+      <div class="b-key" id="fS3"></div>
       <div class="w-key" id="g3"></div>
-      <div class="b-key" id="g#3"></div>
+      <div class="b-key" id="gS3"></div>
       <div class="w-key" id="a3"></div>
-      <div class="b-key" id="a#3"></div>
+      <div class="b-key" id="aS3"></div>
       <div class="w-key" id="b3"></div>
       <div class="w-key" id="c4"></div>
-      <div class="b-key" id="c#4"></div>
+      <div class="b-key" id="cS4"></div>
       <div class="w-key" id="d4"></div>
-      <div class="b-key" id="d#4"></div>
+      <div class="b-key" id="dS4"></div>
       <div class="w-key" id="e4"></div>
       <div class="w-key" id="f4"></div>
-      <div class="b-key" id="f#4"></div>
+      <div class="b-key" id="fS4"></div>
       <div class="w-key" id="g4"></div>
-      <div class="b-key" id="g#4"></div>
+      <div class="b-key" id="gS4"></div>
       <div class="w-key" id="a4"></div>
-      <div class="b-key" id="a#4"></div>
+      <div class="b-key" id="aS4"></div>
       <div class="w-key" id="b4"></div>
       <div class="w-key" id="c5"></div>
-      <div class="b-key" id="c#5"></div>
+      <div class="b-key" id="cS5"></div>
       <div class="w-key" id="d5"></div>
-      <div class="b-key" id="d#5"></div>
+      <div class="b-key" id="dS5"></div>
       <div class="w-key" id="e5"></div>
       <div class="w-key" id="f5"></div>
-      <div class="b-key" id="f#5"></div>
+      <div class="b-key" id="fS5"></div>
       <div class="w-key" id="g5"></div>
-      <div class="b-key" id="g#5"></div>
+      <div class="b-key" id="gS5"></div>
       <div class="w-key" id="a5"></div>
-      <div class="b-key" id="a#5"></div>
+      <div class="b-key" id="aS5"></div>
       <div class="w-key" id="b5"></div>
     </div>
 
     <div class="attribution">
       <p>The piano layout and sound was inspired by <a href="https://github.com/michaelmp" target="_blank">Michael Morris-Pearce</a>, </p> 
     </div>
-
-    </body>
+    
+    <script src="piano.js"></script>
   </body>
 
 </html>
