@@ -4,34 +4,51 @@ Light Gold #AD974F
 Dark Grey #231F20
 Light Grey #EAEAEA */
 
+:root {
+  --dark-gold-color: #8E793E;
+  --light-gold-color: #AD974F;
+  --dark-grey-color: #231F20;
+  --light-grey-color: #EAEAEA;
+  --white-key-width: 48px;
+  --black-key-width: 28px;
+  --white-key-height: 192px;
+  --black-key-height: 100px;
+
+}
+
 * {
   font-family: Georgia;
   color:  #231F20;
 }
 
-li {
-	display: inline-block;
+.welcome, .piano{
+	text-align: center;
 }
 
 .w-key {
-	width: 40px;
-	height: 60px;
+	display: inline-block;
+	width: var(--white-key-width);
+	height: var(--white-key-height);
 	background-color: white;
+	margin: 0 -6px;
 	border: 1px solid;
 }
 
 .b-key {
-	width: 20px;
-	height: 40px;
+	display: inline-block;
+	position: relative;
+	width: var(--black-key-width);
+	height: var(--black-key-height);
 	background-color: black;
-	margin-bottom: 20px;
+	margin: 0 -14px;
+	vertical-align: top;
 }
 
-li.w-key:hover{
+.w-key:hover {
 	background-color: #EAEAEA;
 }
 
-li.b-key:hover{
+.b-key:hover {
 	background-color: #464646;
 }
 
